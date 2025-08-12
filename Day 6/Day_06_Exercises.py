@@ -1,6 +1,6 @@
 # LEVEL 1
 
-emp = list() #1
+emp = tuple() #1
 cpu_archeticture = ('comet_lake','tiger_lake','raptor_lake') #2
 gpu_archeticture = ('Maxwell','Blackwell','Turing') #2
 computer = cpu_archeticture + gpu_archeticture #3
@@ -23,7 +23,7 @@ yemek_lt = list(yemek_tp) #3
 yarim_yemek = yemek_tp[2:3] #4
 
 s1 = yemek_lt[0:3]
-s2 = yemek_lt[3:] #5
+s2 = yemek_lt[-3:] #5
 
 del yemek_tp #6
 
