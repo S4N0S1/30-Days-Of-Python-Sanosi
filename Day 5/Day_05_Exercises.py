@@ -12,14 +12,14 @@ print(it_companies) #7
 print(f"The length of it_companies is {len(it_companies)}") #8
 
 #! Attempted to make a print that'll always print the middle company REGARDLESS of the number of companies :P
-middle_company = round(len(it_companies)/2)
-print(it_companies[0], it_companies[middle_company-1], it_companies[-1]) #9
+middle_company_idx= round(len(it_companies)/2)
+print(it_companies[0], it_companies[middle_company_idx -1], it_companies[-1]) #9
 it_companies[0] = "Telegram"
 print(it_companies) #10
 it_companies.append("X") #11
 print(it_companies)
-middle_company = round(len(it_companies)/2)
-it_companies.insert(middle_company, "LinkedIn") #12
+middle_company_idx = round(len(it_companies)/2)
+it_companies.insert(middle_company_idx, "LinkedIn") #12
 print(it_companies)
 it_companies[3] = it_companies[3].upper() #13
 print(it_companies)
@@ -35,8 +35,10 @@ lookup = input("Type a company name and I'll see if it exists in it_companies: "
 
 #! This is probably a better method (because it can deal with the errors):
 #? How to make an if to make it point from left or right depending on the closest path.
-try: print(f"Yes, {lookup} exists in it_companies.\nIt is the item number {it_companies.index(lookup)+1} from right.")
-except ValueError: print(f"Sorry, {lookup} doesn't exist in that list")
+try:
+  print(f"Yes, {lookup} exists in it_companies.\nIt is the item number {it_companies.index(lookup)+1} from right.")
+except ValueError: 
+  print(f"Sorry, {lookup} doesn't exist in that list")
 
 sorted_it_companies = sorted(it_companies) #16 (better?)
 print(f"This is the list in alphabetical order:\n {sorted_it_companies}")
@@ -51,14 +53,14 @@ print(it_companies[0:3]) #18
 print(it_companies[-3:]) #19
 #! Why is print(it_companies[-3:-1]) wrong?
 
-middle_company = round(len(it_companies)/2)
-print(it_companies[middle_company-2], it_companies[middle_company-1], it_companies[middle_company]) #20 (REGARDLESS OF NUMBER OF ITEMS)
+middle_company_idx = round(len(it_companies)/2)
+print(it_companies[middle_company_idx-2], it_companies[middle_company_idx-1], it_companies[middle_company_idx]) #20 (REGARDLESS OF NUMBER OF ITEMS)
 print(it_companies[2:5]) #20 (Won't work if the list gets modified)
 
 it_companies.pop(0) #21
 print(it_companies)
 
-del it_companies[middle_company-1] #22
+del it_companies[middle_company_idx-1] #22
 print(it_companies)
 
 it_companies.pop() #23
